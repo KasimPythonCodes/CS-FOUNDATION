@@ -1,0 +1,196 @@
+{% extends 'User_Templates/base_foundation.html' %}
+{% load static %}
+
+{% block title %} CS Foundation {% endblock title %}
+{% block content %} 
+    <section class="page-banner-wrap bg-cover" style="background-image: url('{% static 'assets/img/banner/marrage-about.jpg' %}')">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="page-heading text-white">
+                        <div class="sub-title">
+                            <h4><strong>Our Mission:</strong> Marriages, Education, Medicine</h4>
+                        </div>
+                        <div class="page-title">
+                            <h1> Support
+                                For Marriage</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Marriages </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cause-contents-wrapper section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12">
+                    <div class="cause-details-wrapper">
+                        <div class="featured-thumb">
+                            <img src="{% static 'assets/img/gallery-csf/csf.jpg' %}" alt="">
+                        </div>
+                        <div class="give-form-wrap cause-form-wrap">
+                            <div class="cause-meta">
+                                <a href="#" class="cause-cat"><i class="fal fa-heart"></i> Marriage</a>
+                            </div>
+                            <h2 class="give-form-title">Somalian People Need Marriage</h2>
+                            <div class="total-bar-counts row align-items-center">
+                                <div class="goal-progress-wrap col-12 col-lg-8 col-md-7">
+                                    <div class="progress">
+                                        <div class="progress-bar wow fadeInLeft" role="progressbar" style="width:80%"></div>
+                                    </div>
+                                </div>
+                                <div class="cause-amount d-flex mt-3 mt-md-0 justify-content-between col-12 col-lg-4 col-md-5">
+                                    <div class="price-raised">
+                                        <i class="fal fa-rupee"></i><span>70</span> Raised
+                                    </div>
+                                    <div class="price-goal">
+                                        <i class="far fa-analytics"></i><span>7000</span> Goal
+                                    </div>
+                                </div>
+                            </div>
+                            <form action="#" class="give-form">
+
+                                <div class="donate-amount-buttons give-donation-amount">
+                                    <span name="donateamount" value="5.00">5</span>
+                                    <span name="donateamount" value="10.00" class="active">10</span>
+                                    <span name="donateamount" value="20.00">20</span>
+                                    <span name="donateamount" value="50.00">50</span>
+                                    <span name="donateamount" value="100.00">100</span>
+                                    <span>custom</span>
+                                </div>
+
+                                <div class="give-payment-mode-select">
+                                    <h3>Select Payment Method</h3>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="method1" name="paymentmode" class="custom-control-input">
+                                        <label class="custom-control-label" for="method1">Test Donation</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="method2" name="paymentmode" class="custom-control-input">
+                                        <label class="custom-control-label" for="method2">Offline Donation</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="method3" name="paymentmode" class="custom-control-input">
+                                        <label class="custom-control-label" for="method3">Credit Card</label>
+                                    </div>
+                                </div>
+                                <div class="give-purchase-form-wrap">                                    
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="single-personal-info">
+                                                <label for="fname">First Name</label>
+                                                <input type="text" class="give-input" id="fname" placeholder="Enter Name" >                                         
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="single-personal-info">
+                                                <label for="lname">Last Name</label>
+                                                <input type="text" class="give-input" id="lname" placeholder="Enter Name">                                         
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-12">
+                                            <div class="single-personal-info">
+                                                <label for="email">Email Address</label>
+                                                <input type="email" class="give-input" id="email" placeholder="Enter Email" >                                         
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-12">
+                                            <div class="donate-total-amount">
+                                                <div class="give-donation-total-label">Donation Total:</div>
+                                                <div class="give-final-total-amount"><span></span>10</div>
+                                                <button type="submit" class="give-submit give-btn"><i class="fal fa-heart"></i>Donate Now</button>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="causes-contents">
+                            <p> Chandan Singh Foundation Donating to  supports marriage is a great way to help couples in need and strengthen the institution of marriage. Many NGOs focus on issues related to marriage, such as family counseling, legal support, and financial assistance.</p>
+                            <p>One example of anChandan Singh Foundation that supports marriage is the Marriage Foundation, which aims to promote healthy marriages and reduce family breakdowns. The organization offers counseling services, conducts research on the causes and effects of family breakdowns, and advocates for policies that support marriage.</p>
+                            <p>Chandan Singh Foundation that support marriage may focus on specific populations, such as low-income families, immigrants, or victims of domestic violence. These organizations may provide services such as financial assistance, legal aid, or counseling to help couples overcome the challenges they may face.
+
+                                Donating to an NGO that supports marriage is a meaningful way to help couples in need and promote healthy relationships. By supporting these organizations, donors can contribute to the overall well-being of families and communities, and help build a stronger, more resilient society.
+                                
+                                
+                                
+                                
+                                
+                                </p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="{% static 'assets/img/banner/WhatsApp Image 2023-03-13 at 7.16.35 PM.jpeg' %}" alt="fundraising">
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="{% static 'assets/img/banner/WhatsApp Image 2023-03-14 at 8.56.43 AM.jpeg' %}" alt="fundraising">
+                                </div>
+                            </div>
+
+                            <h3>Our Goals</h3>
+                          
+                            <p>Supporting marriage is important for building strong families and communities. <b>There are many ways to provide support,</b>offering counseling services,  just this one time,financial assistance, or legal aid to couples in need.</p>
+
+                            <p> By supporting marriage, we can help create a more stable, loving, and fulfilling environment for individuals, families, and society as a whole.</p>
+
+                            <ul>
+                                <li> Support
+                                    For Marriage ‍</li>
+                                <li>Support For
+                                    Free Education</li>
+                                <li> Support For
+                                    Health</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 pl-lg-5 mt-5 mt-lg-0 col-12">
+                    <div class="casues-sidebar-wrapper">
+                        <div class="single-sidebar-widgets">
+                            <div class="widget-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <ul>
+                                <li><a href="#">Education <span>100+</span></a></li>
+                                <li><a href="#">Marriages <span>150+</span></a></li>
+                                <li><a href="#"> Medical  <span>150+</span></a></li>
+                                <!-- <li><a href="#">Medical <span>208</span></a></li>
+                                <li><a href="#">Kids in Africa <span>09</span></a></li> -->
+                            </ul>
+                        </div> 
+                        <!-- single-sidebar-widgets -->
+                        <div class="single-sidebar-widgets">
+                            <div class="widget-title">
+                                <h4>Gallery</h4>
+                            </div>
+                            <div class="causue-gallery-wid">
+                                <a href="{% static 'assets/img/gallery-csf/gallery1.jpg' %}" class="single-cause-img popup-gallery" style="background-image: url('{% static 'assets/img/gallery-csf/gallery1.jpg' %}')"></a>
+                                <a href="{% static 'assets/img/banner/WhatsApp Image 2023-03-12 at 6.49.04 AM.jpeg' %}" class="single-cause-img popup-gallery" style="background-image: url('{% static 'assets/img/gallery-csf/gallery2.jpg' %}')"></a>
+                                <a href="{% static 'assets/img/banner/WhatsApp Image 2023-03-14 at 8.56.43 AM.jpeg' %}" class="single-cause-img popup-gallery" style="background-image: url('{% static 'assets/img/gallery-csf/gallery3.jpg' %}')"></a>
+                                <a href="{% static 'assets/img/banner/csf-1.png' %}" class="single-cause-img popup-gallery" style="background-image: url('{% static 'assets/img/gallery-csf/gallery4.jpg' %}')"></a>
+                            </div>
+                        </div> 
+                        <!-- single-sidebar-widgets -->
+                        <div class="sidebar-promo-widgets bg-cover text-white text-center d-flex align-items-center justify-content-center" style="background-image: url('{% static 'assets/img/banner/gallery-about-main.jpg' %}')">
+                            <span>Call To Action</span>
+                            <h3>There are no secrets to success</h3>
+                            <a href="#">Get In Touch</a>
+                        </div> 
+                        <!-- single-sidebar-widgets -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+{% endblock content %}

@@ -1,0 +1,182 @@
+{% extends 'User_Templates/base_foundation.html' %}
+{% load static %}
+
+{% block title %} CS Foundation {% endblock title %}
+{% block content %} 
+
+    <section class="page-banner-wrap bg-cover" style="background-image: url('{% static "assets\img\banner\about-banner.jpg" %}')"> 
+        <div class="container">
+            <div class="row align-items-center">                                
+                
+                <div class="col-md-8">
+                    <div class="page-heading text-white">
+                        <div class="sub-title">
+                            <h4><strong>Our Mission:</strong> Marriage, Education, Medicine</h4>
+                        </div>
+                        <div class="page-title">
+                            <h1>About Us</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">about us</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us-section section-padding about-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-shots">
+                        <div class="about-main-img">
+                            <img src="{% static 'assets/img/banner/csf-1 (1).png' %}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 about_left_content mt-0 pr-lg-0 pl-lg-5">
+                    <div class="section-title">
+                        <span><i class="fal fa-heart"></i>About Us</span>
+                        <h1>We’ve Done <span>100+</span> marriages</h1>
+                    </div>
+                    <p>  significant cs Foundation of completing 100+ marriages! Your commitment to providing quality services and helping couples start their journey together is truly commendable. Here's to many more happy unions in the future</p>
+                    
+                    <div class="testimonial-quote">
+                        <div class="feedback">
+                            To join the CS Foundation program, please visit the official website and follow the registration process.<a href="https://docs.google.com/forms/d/e/1FAIpQLSeKqhccL0hpaYu1VNX76Yaj1S5HTW3gm19_L6ZF3DYBkqalaQ/viewform?vc=0&c=0&w=1&flr=0">Get Join US</a>
+                        </div>
+                        <div class="user-info d-flex align-items-center">
+                            <div class="profile-img bg-cover" style="background-image: url('{% static '/assets/img/banner/csf-1.png' %}')">                                
+                            </div>
+                            <span> Chandan Singh</span>
+                        </div>
+                    </div>
+
+                    <ul class="list-box">
+                        <li>Marriage</li>
+                        <li> Education</li>
+                        <li> Health</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 pr-lg-0">
+                    <div class="section-title mb-4">
+                        <span><i class="fal fa-heart"></i>skills</span>
+                       
+                        <h1>Our Skillset <span>What </span>  We Look Into?</h1>
+                    </div>
+                    <p>The NGO organized a marriage ceremony for underprivileged couples, providing them with financial assistance, clothes, jewelry, and other necessary items. The event was a huge success and brought joy and happiness to the couples, their families, and the community. The NGO continues to work towards uplifting and empowering marginalized communities.</p>
+                    <div class="skills-list row text-center">
+                        <div class="single-skill col-sm-6 col-12">
+                            <div class="skillprogress" data-bar-color='#d55342' data-percent="90">
+                                <span class="percent"></span>
+                            </div>
+                            <p>Complete Marriage</p>
+                        </div>
+                        <div class="single-skill col-sm-6 col-12">
+                            <div class="skillprogress" data-bar-color='#00baa3' data-percent="65">
+                                <span class="percent"></span>
+                            </div>
+                            <p>free coumputer classes</p>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="col-lg-6 offset-lg-1 mt-5 mt-lg-0">
+                    <div class="skill-box-items row text-center">
+                        <div class="col-12 col-sm-6">
+                            <div class="single-skill-box bg-cover" style="background-image: url('{% static 'assets/img/csf-img/sadi2.jpg' %}')">
+                                <div class="skill-content">
+                                    <div class="icon">
+                                        <i class="fal fa-tint"></i>
+                                    </div>
+                                    <h3>Our Goal</h3>
+                                    <p>Become the One Who is Considered a Hero</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="single-skill-box bg-cover" style="background-image: url('{% static 'assets/img/csf-img/DSC_0012.JPG' %}')">
+                                <div class="skill-content">
+                                    <div class="icon">
+                                        <i class="fal fa-hands-heart"></i>
+                                    </div>
+                                    <h3>Our Missions</h3>
+                                    <p>Become the One Who is Considered a Hero</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="single-skill-box bg-cover" style="background-image: url('{% static 'assets/img/csf-img/DSC_0069.JPG' %}')">
+                                <div class="skill-content">
+                                    <div class="icon">
+                                        <i class="fal fa-medkit"></i>
+                                    </div>
+                                    <h3>Our Achievement</h3>
+                                    <p>Become the One Who is Considered a Hero</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="single-skill-box bg-cover" style="background-image: url('{% static 'assets\img\csf-img\WhatsApp Image 2023-03-07 at 11.44.09 AM (1).jpeg' %}')">
+                                <div class="skill-content">
+                                    <div class="icon">
+                                        <i class="fal fa-house-flood"></i>
+                                    </div>
+                                    <h3>Our Dream</h3>
+                                    <p>Become the One Who is Considered a Hero</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <section class="brands-carousel-section bg-cover bg-overlay section-padding"  style="background-image: url('{% static  'assets/img/banner/our-event.jpg' %}')">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-12">
+                    <div class="brands-carousel-active owl-carousel d-flex align-items-center">
+                        <div class="single-brand-logo">
+                            <img src="{% static 'assets/img/brand/1.png' %}" alt="">
+                        </div>
+                        <div class="single-brand-logo">
+                            <img src="{% static 'assets/img/brand/2.png' %}" alt="">
+                        </div>
+                        <div class="single-brand-logo">
+                            <img src="{% static 'assets/img/brand/3.png' %}" alt="">
+                        </div>
+                        <div class="single-brand-logo">
+                            <img src="{% static 'assets/img/brand/4.png' %}" alt="">
+                        </div>
+                        <div class="single-brand-logo">
+                            <img src="{% static 'assets/img/brand/5.png' %}" alt="">
+                        </div>
+                        <div class="single-brand-logo">
+                            <img src="{% static 'assets/img/brand/6.png' %}" alt="">
+                        </div>
+                        <div class="single-brand-logo">
+                            <img src="{% static 'assets/img/brand/1.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    {% endblock content %}   
+   

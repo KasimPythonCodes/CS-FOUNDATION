@@ -1,0 +1,180 @@
+
+{% extends 'User_Templates/base_foundation.html' %}
+{% load static %}
+
+{% block title %} CS Foundation {% endblock title %}
+{% block content %} 
+    
+    <section class="page-banner-wrap bg-cover" style="background-image: url('{% static 'assets/img/gallery-csf/banner-header-close-up-of-man-and-woman-couple-han-2022-01-11-23-25-06-utc.jpg' %}')">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="page-heading text-white">
+                        <div class="sub-title">
+                            <h4><strong>Our Mission:</strong> Food, Education, Medicine</h4>
+                        </div>
+                        <div class="page-title">
+                            <h1>Contact Us</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">contact</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-page-wrap section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card1">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-envelope"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Email Address</h4>
+                                <span>Sent mail asap anytime</span>
+                            </div>
+                        </div>
+                        <div class="bottom-part">                            
+                            <div class="info">
+                                <p>help@chandansinghfoundation.com</p>
+                                <!-- <p> jobs@example.com </p> -->
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card2">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-phone"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Phone Number</h4>
+                                <span>call us asap anytime</span>
+                            </div>
+                        </div>
+                        <div class="bottom-part">                            
+                            <div class="info">
+                                <!-- <p> 098-098-098-09 </p> -->
+                                <p>+91 995-8535-858 </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-contact-card card3">
+                        <div class="top-part">
+                            <div class="icon">
+                                <i class="fal fa-map-marker-alt"></i>
+                            </div>
+                            <div class="title">
+                                <h4>Office Address</h4>
+                                <span>Sent mail  anytime</span>
+                            </div>
+                        </div>
+                        <div class="bottom-part">                            
+                            <div class="info">
+                                <p>Tola Chahbachcha, Panch-pojha, Block-Chakai,</p>
+                                <p>Bihar</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- <div class="col-12 col-lg-12">
+                    <div class="contact-map-wrap">
+                        <div id="map">
+                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.858204515122!2d86.40348891422802!3d24.559561663301285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f1678ddee02fb1%3A0x62c70487b0fdb3ab!2sEDUCATION%20ZONE%20CHAKAI%2C%20JAMUI%2C%20BIHAR!5e0!3m2!1sen!2sin!4v1678889133345!5m2!1sen!2sin" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="row section-padding pb-0">
+                <div class="col-12 text-center mb-20">
+                    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">
+        ×
+        </button>
+        <strong>{{message}}</strong>
+      </div>
+   {% endfor %}
+  {% endif %}
+                    <div class="section-title">
+                        <span><i class="fal fa-pen"></i>Write Here</span>
+                        <h1>Get In Touch</h1>
+                    </div>
+                </div>
+             
+                <div class="col-12 col-lg-12">
+                    
+                    <div class="contact-form">                                                        
+                
+                        
+                        <form action="" class="row conact-form" method="post">
+                            {% csrf_token %}
+                            <div class="col-md-6 col-12">
+                                <div class="single-personal-info">
+                                    <label for="fname">Full Name</label>
+                                    <input type="text" id="fname"    name="Full_Name" required placeholder="Enter Name">                                         
+                                </div>
+                            </div>                            
+                            <div class="col-md-6 col-12">
+                                <div class="single-personal-info">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required placeholder="Enter Email Address" >                                         
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="single-personal-info">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="text" id="phone" name="phone_no" required placeholder="Enter Number">                                         
+                                </div>
+                            </div>                                      
+                            <div class="col-md-6 col-12">
+                                <div class="single-personal-info">
+                                    <label for="subject">Subject</label>
+                                    <input type="text" id="subject" name="subject" required placeholder="Enter Subject">                                         
+                                </div>
+                            </div>                                      
+                            <div class="col-md-12 col-12">
+                                <div class="single-personal-info">
+                                    <label for="subject">Enter Message</label>
+                                    <textarea id="subject" name="message_info" required placeholder="Enter message"></textarea>                                        
+                                </div>
+                            </div>                                      
+                            <div class="col-md-12 col-12 text-center">
+                                <input class="submit-btn" type="submit" value="Get A Quote">
+                            </div>                                      
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %} 

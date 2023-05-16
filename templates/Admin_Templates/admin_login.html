@@ -1,0 +1,634 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="modinatheme">
+    <!-- ======== Page title ============ -->
+    <title>CS Foundation </title>
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+    <!-- ===========  All Stylesheet ================= -->
+    <!--  Icon css plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/icons.css' %}">
+    <!--  animate css plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!--  magnific-popup css plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!--  owl carosuel css plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <!-- metis menu css file -->
+    <link rel="stylesheet" href="{% static 'assets/css/metismenu.css' %}">
+    <!--  owl theme css plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.css' %}">
+    <!--  Bootstrap css plugins -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!--  main style css file -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- template main style css file -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="body-wrapper">    
+    <!-- preloader -->
+    <div id="preloader" class="preloader">
+        <div class="animation-preloader">
+            <div class="spinner">                
+            </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="W" class="letters-loading">
+                        W
+                    </span>
+                    <span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+                    <span data-text-preloader="L" class="letters-loading">
+                        L
+                    </span>
+                    <span data-text-preloader="C" class="letters-loading">
+                        C
+                    </span>
+                    <span data-text-preloader="O" class="letters-loading">
+                        O
+                    </span>
+                     <span data-text-preloader="M" class="letters-loading">
+                        M
+                    </span>
+                     <span data-text-preloader="E" class="letters-loading">
+                        E
+                    </span>
+                    
+                </div>
+            <p class="text-center"> to  Chandan Singh Foundation</p>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-left">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-right">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-right">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- welcome content start from here -->
+
+    <header class="header-wrap header-box-style header-1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 p-0 d-lg-none d-block d-none-mobile">
+                    <div class="top-bar text-right">
+                        <a href="mailto:help@chandansinghfoundation.com"><i class="fal fa-envelope"></i>help@chandansinghfoundation.com
+                        </a>
+                        <a href="tel:+91 995-8535-858"><i class="fal fa-phone"></i>+91 995-8535-858</a>
+                        <a href="{% url 'User_Donation' %}" class="d-btn">Donate Now</a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-6 col-lg-3 pr-0">
+                    <div class="logo">
+                        <a href="{% url 'User_Index' %}"><img src="{% static 'assets/img/csf-img/Logo-CS-5.png' %}" alt="FundBux"></a>
+                    </div>
+                </div>
+                <div class="col-xl-9 pl-lg-0 col-lg-9 d-none d-lg-block">
+                    <div class="box-wrap">
+                        <div class="top-bar text-right">
+                            <a href="mailto:help@chandansinghfoundation.com"><i class="fal fa-envelope"></i>help@chandansinghfoundation.com</a>
+                            <a href="tel:+91 995-8535-858"><i class="fal fa-phone"></i>+91 995-8535-858</a>
+                            <a href="{% url 'User_Donation' %}" class="d-btn">Donate Now</a>
+                        </div>
+                        <div class="menu-wrap d-flex align-items-center justify-content-around">
+                            <div class="main-menu">
+                                <ul>
+                                    <li><a href="{% url 'User_Index' %}">Home</a>
+                                        <ul class="sub-menu">
+                                            <!-- <li>
+                                               <a href="index.html">Homepage 1</a>
+                                            </li> -->
+                                            <!-- <li>
+                                               <a href="index-2.html">Homepage 2</a>
+                                            </li>
+                                            <li>
+                                               <a href="index-3.html">Homepage 3</a>
+                                            </li> -->
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'User_About' %}">about</a></li>
+                                    <li><a href="#">Services</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{% url 'User_Causes' %}">our Gallery</a></li>
+                                            <li><a href="{% url 'User_Marriage' %}">Marriage</a></li>
+                                            <li><a href="{% url 'User_Education' %}">Education</a></li>
+                                            <li><a href="{% url 'User_Health' %}">Health</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">More</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{% url 'User_Faq' %}">faq</a></li>
+                                            <li><a href="{% url 'User_Events' %}">events</a></li>
+                                            <li><a href="{% url 'User_Eventdetails' %}">event details</a></li>
+                                            <li><a href="{% url 'User_Team' %}">Team</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'User_Outproduct' %}">Our products</a></li>
+                                    <li><a href="{% url 'User_Contact' %}">Contact</a></li>
+                                    <li><a href="{% url 'admin_login' %}">Login</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="social-link">
+                                <a href="https://www.facebook.com/chandansinghfoundation"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                
+                                <a href="https://www.youtube.com/@csf-care"><i class="fab fa-youtube"></i></a>
+                                <a href="https://www.instagram.com/chandan_singh_foundation/?hl=en"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>                        
+                    </div>                    
+                </div>                
+                <div class="col-6 d-lg-none d-block pl-0">
+                    <div class="mobile-nav-wrap">                    
+                        <div id="hamburger">
+                            <i class="fal fa-bars"></i>
+                        </div>
+                         <!-- mobile menu - responsive menu  -->
+                       
+                         {% comment %}
+                       <div class="mobile-nav">
+                        <button type="button" class="close-nav">
+                            <i class="fal fa-times-circle"></i>
+                        </button>
+                        <nav class="sidebar-nav">
+                            <ul class="metismenu" id="mobile-menu">
+                                <li><a class="has-arrow" href="{% url 'User_Index' %}">Homes</a>
+                                    <ul class="sub-menu">
+                                        <!-- <li><a href="index.html">Homepage 1</a></li> -->
+                                        <!-- <li><a href="index-2.html">Homepage 2</a></li>
+                                        <li><a href="index-3.html">Homepage 3</a></li> -->
+                                    </ul>
+                                </li>
+                                <li><a href="about.html">about</a></li>
+                                 <li><a href="causes.html">Services</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="causes.html">our Gallery</a></li>
+                                        <li><a href="marriage.html">Marriage</a></li>
+                                        <li><a href="Education.html">Education</a></li>
+                                        <li><a href="health.html">Health</a></li>
+                                    </ul>
+                                </li>
+                               <li><a href="#">More</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="faq.html">faq</a></li>
+                                        <li><a href="events.html">events</a></li>
+                                        <li><a href="event-details.html">event details</a></li>
+                                        <li><a href="team.html">Team</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="our-product.html"> Our Product</a></li>
+                                <!-- <li><a href="news.html">News</a></li> -->
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="action-bar">
+                            <a href="mailto:help@chandansinghfoundation.com"><i class="fal fa-envelope"></i>help@chandansinghfoundation.com</a>
+                            <a href="tel:123-456-7890"><i class="fal fa-phone"></i>+91 995-8535-858</a>
+                            <a href="{% url 'User_Donation' %}" class="d-btn theme-btn">Donate Now</a>
+                        </div>
+                    </div> 
+                       {% endcomment %}
+                         
+
+
+                        <div class="mobile-nav">
+                            <button type="button" class="close-nav">
+                                <i class="fal fa-times-circle"></i>
+                            </button>
+                            <nav class="sidebar-nav">
+                                <ul class="metismenu" id="mobile-menu">
+                                    <li><a class="has-arrow" href="{% url 'User_Index' %}">Homes</a>
+                                    </li>
+                                    <li><a href="{% url 'User_About' %}">about</a></li>
+                                     <li><a href="#">Services</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{% url 'User_Causes' %}">our Gallery</a></li>
+                                            <li><a href="{% url 'User_Marriage' %}">Marriage</a></li>
+                                            <li><a href="{% url 'User_Education' %}">Education</a></li>
+                                            <li><a href="{% url 'User_Health' %}">Health</a></li>
+                                        </ul>
+                                    </li>
+                                   <li><a href="#">More</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="{% url 'User_Faq' %}">faq</a></li>
+                                            <li><a href="{% url 'User_Events' %}">events</a></li>
+                                            <li><a href="{% url 'User_Eventdetails' %}">event details</a></li>
+                                            <li><a href="{% url 'User_Team' %}">Team</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'User_Contact' %}">Contact</a></li>
+                                    <li><a href="/user-login/">Login</a></li>
+    
+    
+    
+                                </ul>
+    
+                            </nav>
+    
+                            <div class="action-bar">
+    
+                                <a href="mailto:help@chandansinghfoundation.com"><i class="fal fa-envelope"></i>help@chandansinghfoundation.com</a>
+                                <a href="tel:123-456-7890"><i class="fal fa-phone"></i>+91 995-8535-858</a>
+                                <a href="{% url 'User_Donation' %}" class="d-btn theme-btn">Donate Now</a>
+                            </div>
+                        </div> 
+                        
+                         <!-- mobile menu - responsive menu end  -->
+                        
+                        
+                    </div>
+                    <div class="overlay"></div>
+                </div>
+            </div>
+        </div>
+    </header>   
+    <style>
+      html {
+          height: 100%;
+        }
+        body {
+          margin:0;
+          padding:0;
+          font-family: sans-serif;
+          background: linear-gradient(#141e30, #243b55);
+        }
+        
+        .login-box {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 400px;
+          padding: 40px;
+          transform: translate(-50%, -50%);
+          background: rgba(0,0,0,.5);
+          box-sizing: border-box;
+          box-shadow: 0 15px 25px rgba(0,0,0,.6);
+          border-radius: 10px;
+        }
+        
+        .login-box h2 {
+          margin: 0 0 30px;
+          padding: 0;
+          color: #fff;
+          text-align: center;
+        }
+        
+        .login-box .user-box {
+          position: relative;
+        }
+        
+        .login-box .user-box input {
+          width: 100%;
+          padding: 10px 0;
+          font-size: 16px;
+          color: #fff;
+          margin-bottom: 30px;
+          border: none;
+          border-bottom: 1px solid #fff;
+          outline: none;
+          background: transparent;
+        }
+        .login-box .user-box label {
+          position: absolute;
+          top:0;
+          left: 0;
+          padding: 10px 0;
+          font-size: 16px;
+          color: #fff;
+          pointer-events: none;
+          transition: .5s;
+        }
+        
+        .login-box .user-box input:focus ~ label,
+        .login-box .user-box input:valid ~ label {
+          top: -20px;
+          left: 0;
+          color: #03e9f4;
+          font-size: 12px;
+        }
+        
+        .login-box form a {
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: #03e9f4;
+          font-size: 16px;
+          text-decoration: none;
+          text-transform: uppercase;
+          overflow: hidden;
+          transition: .5s;
+          margin-top: 40px;
+          letter-spacing: 4px
+        }
+        
+        .login-box a:hover {
+          background: #03e9f4;
+          color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 5px #03e9f4,
+                      0 0 25px #03e9f4,
+                      0 0 50px #03e9f4,
+                      0 0 100px #03e9f4;
+        }
+        
+        .login-box a span {
+          position: absolute;
+          display: block;
+        }
+        
+        .login-box a span:nth-child(1) {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, #03e9f4);
+          animation: btn-anim1 1s linear infinite;
+        }
+        
+        @keyframes btn-anim1 {
+          0% {
+            left: -100%;
+          }
+          50%,100% {
+            left: 100%;
+          }
+        }
+        
+        .login-box a span:nth-child(2) {
+          top: -100%;
+          right: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent, #03e9f4);
+          animation: btn-anim2 1s linear infinite;
+          animation-delay: .25s
+        }
+        
+        @keyframes btn-anim2 {
+          0% {
+            top: -100%;
+          }
+          50%,100% {
+            top: 100%;
+          }
+        }
+        
+        .login-box a span:nth-child(3) {
+          bottom: 0;
+          right: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(270deg, transparent, #03e9f4);
+          animation: btn-anim3 1s linear infinite;
+          animation-delay: .5s
+        }
+        
+        @keyframes btn-anim3 {
+          0% {
+            right: -100%;
+          }
+          50%,100% {
+            right: 100%;
+          }
+        }
+        
+        .login-box a span:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(360deg, transparent, #03e9f4);
+          animation: btn-anim4 1s linear infinite;
+          animation-delay: .75s
+        }
+        
+        @keyframes btn-anim4 {
+          0% {
+            bottom: -100%;
+          }
+          50%,100% {
+            bottom: 100%;
+          }
+        }
+        
+  </style>
+   <br> 
+   <br> 
+   <br> 
+   <br> 
+   <br> 
+   <br> 
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <section class="about-us-section section-padding about-page">
+        <div class="container">
+            <div class="row pt-5" style="padding-top: 50rem ;">
+              <div class="login-box">
+                
+
+                <form method="post">
+                    {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-dismissible alert-info">
+                    <button type="button" class="close" data-dismiss="alert">
+                    ×
+                    </button>
+                    <strong>{{message}}</strong>
+                  </div>
+               {% endfor %}
+              {% endif %}
+                    {% csrf_token %}
+                  <div class="user-box">
+                    <input type="text" name="email" required="">
+                    <label>Email</label>
+                  </div>
+                  <div class="user-box">
+                    <input type="password" name="password" required="">
+                    <label>Password</label>
+                  </div>
+                  <button class="btn btn-success">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </button>
+                </form>
+              </div>
+               </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+    <footer class="footer-1 footer-wrap">
+        <div class="footer-widgets section-bg pt-60 pb-60">            
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xl-4 col-12">                        
+                        <div class="single-footer-wid site-info-widget">
+                            <div class="wid-title">
+                                <h4>Get In Touch</h4>
+                            </div>
+                            <div class="contact-us">
+                                <div class="single-contact-info">
+                                    <div class="icon">
+                                        <i class="fal fa-phone"></i>
+                                    </div>
+                                    <div class="contact-info">
+                                        <span>+91 995-8535-858</span>
+                                        <!-- <span>+880-7623458760</span> -->
+                                    </div>
+                                </div>
+                                <div class="single-contact-info">
+                                    <div class="icon">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-info">
+                                        <span>help@chandansinghfoundation.com</span>
+                                        
+                                    </div>
+                                </div>
+                                <div class="single-contact-info">
+                                    <div class="icon">
+                                        <i class="fal fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-info">
+                                        <span>Village -Tola Chahbachcha, Panch-pojha, Block-Chakai,<br/> Dist- Jamui, Chakai, Jamui, - bihar - 811303</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="social-link">
+                                <a href="https://www.facebook.com/chandansinghfoundation"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/chandan_singh_foundation/?hl=en"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.youtube.com/@csf-care"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div> <!-- /.col-lg-3 - single-footer-wid -->
+                    <div class="col-md-6 col-xl-4 offset-xl-1 col-12">
+                        <div class="single-footer-wid">
+                            <div class="wid-title">
+                                <h4>About Us</h4>
+                            </div>
+                            <div class="special-menu">
+                                <ul>
+                                    <li><a href="{% url 'User_About' %}">about</a></li>
+                                    <li><a href="{% url 'User_Faq' %}">faq</a></li>
+                                    <li><a href="{% url 'User_Events' %}">events</a></li>
+                                    <li><a href="{% url 'User_Eventdetails' %}">event details</a></li>
+                                    <li><a href="{% url 'User_Team' %}">Team</a></li>                                  
+                                                                    
+                                </ul>
+                            </div>
+                            
+                          
+                            <div class="special-menu">
+                               
+
+                                <ul>
+                                   
+                                    <li><a href="{% url 'User_Index' %}">Home</a></li>
+                                    <li><a href="{% url 'User_Donation' %}">Donation</a></li>
+                                    <!-- <li><a href="team.html">Services</a></li> -->
+                                    <!-- <li><a href="contact.html">More</a></li> -->
+                                <li><a href="{% url 'User_Outproduct' %}">Our product</a></li>                              
+                                    <!-- <li><a href="faq.html">Our product</a></li> -->
+                                    <li><a href="{% url 'User_Contact' %}">Contact us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> <!-- /.col-lg-3 - single-footer-wid -->
+                    <div class="col-md-6 col-xl-3 col-12">
+                        <div class="single-footer-wid">
+                            <div class="wid-title">
+                                <h4>Popular Causes</h4>
+                            </div>
+                            <ul>
+                                <li><a href="{% url 'User_Marriage' %}">Marriages</a></li>
+                                <li><a href="{% url 'User_Health' %}">Health-care</a></li>
+                                <li><a href="{% url 'User_Education' %}">Education</a></li>
+                                <!-- <li><a href="donation.html">Donation</a></li> -->
+                                <!-- <li><a href="event.html">Events</a></li> -->
+                            </ul>
+                        </div>
+                    </div> <!-- /.col-lg-3 - single-footer-wid -->
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-12 text-center">
+                        <div class="copyright-info">
+                            <p> <a href="index.html">chandansinghfoundation</a> Charity Trust - 2023. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--  ALl JS Plugins
+    ====================================== -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imageload.min.js' %}"></script>
+    <script src="{% static 'assets/js/scrollUp.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/waypoint.js' %}"></script>
+    <script src="{% static 'assets/js/easypiechart.min.js' %}"></script>
+    <script src="{% static 'assets/js/counterup.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/metismenu.js' %}"></script>
+    <script src="{% static 'assets/js/timeline.min.js' %}"></script>
+    <script src="{% static 'assets/js/ajax-mail.js' %}"></script>
+    <script src="{% static 'assets/js/active.js' %}"></script>
+</body>
+
+</html>

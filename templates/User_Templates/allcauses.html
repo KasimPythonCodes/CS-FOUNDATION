@@ -1,0 +1,110 @@
+{% extends 'User_Templates/base_foundation.html' %}
+{% load static %}
+
+{% block title %} CS Foundation {% endblock title %}
+{% block content %} 
+
+    <section class="page-banner-wrap bg-cover" style="background-image: url('{% static "assets/img/banner/event-1170.jpg" %}')">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="page-heading text-white">
+                        <div class="sub-title">
+                            <h4><strong>Our Mission:</strong> Marriage, Education, Medicine</h4>
+                        </div>
+                        <div class="page-title">
+                            <h1>our some  photos</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Our Gallery</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="our-causes-section section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12 text-center">
+                    <div class="causes-cat-filter">
+                        <form action="">
+                        <input type="text" value="{{galary_img.create_category}}">
+                        
+                        <a href="/pro-galarys/"> <button data-filter="*"  class="active">View All</button></a>
+                        {% for galary_img in  galary_img %}
+                        <a href="/pro-galary/{{galary_img.create_category}}/"  ><button  data-filter="education" name="nape" value="{{galary_img.id}}">{{galary_img}}</button></a>
+                        <!-- <a href="#"  ><button  data-filter="education" ></button></a>
+                        <a href="#"><button data-filter="medicine">Health</button></a>
+                        <a href="#"><button data-filter="food">Marriage</button></a>
+                         -->
+                        {% endfor %}
+                    </form>
+
+                        
+                        
+                        <!-- <button data-filter=".water">All</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row p-1">
+        {% if  galary_pic  %}
+                {% for i in galary_pic %}
+                <div class="col-sm-4 col-lx-4 p-3">
+                    <div class="card" width="24rem">
+                        <input type="text" name="getid" id="" value="{{i.select_category.create_category}}">
+                        <img src="/media/{{i.Img_Avatar}}" class="card-img-top"  width="360"  height="240" alt="...">
+                        <div class="card-body">
+                            <h5>{{i.created_at}}</h5>
+
+                        </div>
+                      </div>
+                </div>
+                {% endfor %}
+                {% else %}
+
+                {% for i in galary_pics %}
+                <div class="col-sm-4 col-lx-4 p-3">
+                    <div class="card" width="24rem">
+                        <input type="text" name="getid" id="" value="{{i.select_category.create_category}}">
+                        <img src="/media/{{i.Img_Avatar}}" class="card-img-top"  width="360"  height="240" alt="...">
+                        <div class="card-body">
+                            <h5>{{i.created_at}}</h5>
+
+                        </div>
+                      </div>
+                </div>
+                {% endfor %}
+
+                {% endif %}
+
+            </div>
+            
+
+
+        </div>
+    </section>        
+
+    <section class="join-cta-section no-bg text-white text-center text-lg-left section-padding pt-0">
+        <div class="container bg-cover bg-overlay" style="background-image: url('{% static 'assets/img/csf-img/background.jpg' %}')">
+            <div class="row align-items-center">
+                <div class="offset-xl-5 col-xxl-8 col-lg-6 offset-lg-2 col-md-12">
+                    <div class="section-title">
+                        <span><i class="fal fa-heart"></i>NGO organized a marriage </span>
+                        <h1> Welcome to Chandan Singh Foundation</h1>
+                    </div>
+
+                    <!-- <a href="about.html" class="cat-btn color"><i class="fal fa-briefcase"></i>Careers</a>
+                    <a href="about.html" class="cat-btn"><i class="fal fa-user"></i>Internship</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %} 

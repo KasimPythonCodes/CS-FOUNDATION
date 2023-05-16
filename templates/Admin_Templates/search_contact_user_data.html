@@ -1,0 +1,255 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CS Foundation Panel</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'admin_js/vendors/simple-line-icons/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_js/vendors/flag-icon-css/css/flag-icon.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_js/vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'admin_js/vendors/daterangepicker/daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'admin_js/vendors/chartist/chartist.min.css' %}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="{% static 'admin_css/css/style.css' %}">
+    <!-- End layout styles -->
+    <!-- Icon vgo -->
+    <!-- <link rel="shortcut icon" href="{% static 'admin_img/images/favicon.png' %}" /> -->
+  
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex align-items-center">
+          <a class="navbar-brand brand-logo" href="{% url 'admin_panel_index' %}">
+            <img src="{% static 'assets/img/csf-img/Logo-CS-5.png' %}" alt="logo" class="logo-dark" />
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="{% url 'admin_panel_index' %}"><img src="{% static 'assets/img/csf-img/Logo-CS-5.png' %}" alt="logo" class="logo-dark" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
+          <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome {{request.user.first_name}} {{request.user.last_name}}</h5>
+          <ul class="navbar-nav navbar-nav-right ml-auto">
+            
+            <form class="search-form d-none d-md-block" action="{% url 'search' %}" method="get">
+              <i class="icon-magnifier"></i>
+              <input type="search" class="form-control" name="query" placeholder="Search Here" title="Search here">
+            </form>
+            
+
+            {% for get_info in get_info %}
+            <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
+              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <img class="img-xs rounded-circle ml-2" src="/media/{{get_info.profile_pic}}" alt="Profile image"> <span class="font-weight-normal">{{get_info.first_name}} {{get_info.last_name}} </span></a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                <div class="dropdown-header text-center">
+                  <img class="img-md rounded-circle" src="/media/{{get_info.profile_pic}}" alt="Profile image" width="150" height="150">
+                  <p class="mb-1 mt-3">{{request.user.first_name}} {{request.user.last_name}}</p>
+                  <p class="font-weight-light text-muted mb-0">{{get_info.email}}</p>
+                </div>
+                <a class="dropdown-item" href="{% url 'User_Admin_Update_Profile' get_info.id %}"><i class="dropdown-item-icon icon-user text-primary"></i> Edit Profile  <span class="badge badge-pill badge-danger">1</span></a>
+                <!-- <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i> Messages</a> -->
+                <!-- <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i> Activity</a> -->
+                <!-- <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a> -->
+                <a class="dropdown-item" href="{% url 'admin_logout' %}"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+              </div>
+            </li>
+
+            {% endfor %}
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </nav>
+
+
+
+
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="profile-image">
+                  <img class="img-xs rounded-circle" src="/media/{{request.user.profile_pic}}" alt="profile image">
+                  <div class="dot-indicator bg-success"></div>
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">{{request.user.first_name}} {{request.user.last_name}}</p>
+                  <p class="designation">Administrator</p>
+                </div>
+                <div class="icon-container">
+                  <i class="icon-bubbles"></i>
+                  <div class="dot-indicator bg-danger"></div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item nav-category">
+              <span class="nav-link">Dashboard</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin_panel_index' %}">
+                <span class="menu-title">Dashboard</span>
+                <i class="icon-screen-desktop menu-icon"></i>
+              </a>
+            </li>
+            
+            <li class="nav-item nav-category"><span class="nav-link">Galary</span></li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Galary & Category</span>
+
+                <i class="icon-layers menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'admin_post' %}">Galary Post</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'Admin_Post_View' %}">Galary View</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'Admin_Create_Category' %}">Create Category</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'Admin_Category_View' %}">View Category</a></li>
+                  {% for i in obj_e %}
+                  <li class="nav-item"> <a class="nav-link" href="{% url 'User_Evant_post_Edit' i.id %}">Banner Update</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'user-data-contact' %}">
+                <span class="menu-title">Contact</span>
+                <i class="icon-grid menu-icon"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+
+             
+
+                <div class="card">
+                  <div class="card-body">
+                    {% if messages %}
+                    {% for message in messages %}
+                      <div class="alert alert-dismissible alert-success">
+                        <button type="button" class="close" data-dismiss="alert">
+                        ×
+                        </button>
+                        <strong>{{message}}</strong>
+                      </div>
+                   {% endfor %}
+                  {% endif %}
+    
+                    <div class="d-sm-flex align-items-center mb-4">
+
+                      <h4 class="card-title mb-sm-0">Contact Details</h4>
+                      <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all Products</a>
+                    </div>
+                    <div class="table-responsive border rounded p-1">
+                      <table class="table">
+
+                        <thead>
+                          <tr>
+                            <th class="font-weight-bold">User ID</th>
+                            <th class="font-weight-bold">Full Name</th>
+                            <th class="font-weight-bold">User Email</th>
+                            <th class="font-weight-bold">Phone No</th>
+                            <th class="font-weight-bold">Subject</th>
+                            <th class="font-weight-bold">Message</th>
+                            <th class="font-weight-bold">Action</th>
+
+                          </tr>
+                        </thead>
+                        {% if contact_data %}
+                        {% for contact_data in contact_data %}
+                        <tbody>
+                          <tr>
+                            <td>
+                              <!-- <img class="img-sm rounded-circle" src="{% static 'admin_img/images/faces/face1.jpg' %}" alt="profile image"> 
+                              -->
+                                {{contact_data.id | safe | truncatechars:9}} 
+                            
+                            </td>
+
+                            <td>{{contact_data.full_name}}</td>
+
+                            <td>
+                              <!-- <img src="{% static 'admin_img/images/dashboard/alipay.png' %}" alt="alipay" class="gateway-icon mr-2">  -->
+                             {{contact_data.user_email}}</td>
+                            <td>{{contact_data.phone_no}}</td>
+                            <td>{{contact_data.subject}}</td>
+                            <td>
+                              <div class="">{{contact_data.message_info | safe | truncatechars:50 }}</div>
+                            </td>
+                            <td>
+                              <a href="{% url 'User_Contact_for_Admin_Delete' contact_data.id %}"><img src="{% static 'assets\img\delete.jpg' %}" width="100" height="100"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url 'Download' contact_data.id %}"  ><img src="{% static 'assets\img\down.jpg' %}" width="100" height="100"></a> 
+                            </td>
+                          </tr>
+                        </tbody>
+
+                        {% endfor %}
+                        
+                      {% endif %}
+                        
+                      
+                      </table>
+
+                    </div>
+                    <div class="d-flex mt-4 flex-wrap">
+                      <!-- <p class="text-muted">Showing 1 to 10 of {{contact_data_count}} entries</p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © CS Foundation</span>
+              <!-- <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span> -->
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'admin_js/vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'admin_js/vendors/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'admin_js/vendors/moment/moment.min.js' %}"></script>
+    <script src="{% static 'admin_js/vendors/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'admin_js/vendors/chartist/chartist.min.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'admin_js/js/off-canvas.js' %}"></script>
+    <script src="{% static 'admin_js/js/misc.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="{% static 'admin_js/js/dashboard.js' %}"></script>
+    <!-- End custom js for this page -->
+  </body>
+</html>

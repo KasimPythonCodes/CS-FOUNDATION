@@ -1,0 +1,240 @@
+{% extends 'User_Templates/base_foundation.html' %}
+{% load static %}
+
+{% block title %} CS Foundation {% endblock title %}
+{% block content %} 
+
+    <section class="page-banner-wrap bg-cover" style="background-image: url('{% static 'assets/img/banner/unnamed.jpg' %}')">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="page-heading text-white">
+                        <div class="sub-title">
+                            <h4><strong>Our Mission:</strong> Wedding, Education, Health Care</h4>
+                        </div>
+                        <div class="page-title">
+                            <h1>Our Events</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">events</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upcoming-events-wrap section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12 text-center">
+                    <div class="event-cat-filter mb-20">
+                        <button data-filter="*" class="active">All Categories</button>
+                        <button data-filter=".water">Marriage</button>
+                        <button data-filter=".festival">Education</button>
+                        <button data-filter=".proevent">Health-care</button>
+                        <button data-filter=".trending">Trending</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row grid">
+                <div class="col-12 col-lg-6 col-xl-12 water proevent grid-item">
+                    <div class="single-event-ticket row align-items-center">
+                        <div class="col-xl-4">
+                            <div class="event-featured-cover bg-cover" style="background-image: url('{% static 'assets/img/banner/upcoming-event-4.jpg' %}')">
+                                <div class="event-time-address">
+                                    <span><i class="fal fa-calendar-alt"></i>Bihar</span>
+                                    <!-- <span><i class="fal fa-map-marker-alt"></i>NY, London</span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 pr-xl-0">
+                            <div class="event-info">
+                                <h2><a href="#"> CS Foundation help poor people </a></h2>
+                                <p> CS Foundation  can provide financial assistance, and healthcare support to help alleviate the struggles of helpless people.</p>
+                                <ul>
+                                    <li>A place in history</li>
+                                    <li>It’s about impact, goodness</li>
+                                    <li>More goodness in the world</li>
+                                    <li>The world we live</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 text-xl-right">
+                            <div class="event-ticket-buy">
+                                <a href="#" class="ticket-buy-btn"><i class="fal fa-home"></i> Learn More..</a>
+                            </div>
+                        </div>
+                    </div> <!-- single-event-ticket -->
+                </div>                
+                <div class="col-12 col-lg-6 col-xl-12 trending water grid-item">
+                    <div class="single-event-ticket row align-items-center">
+                        <div class="col-xl-4">
+                            <div class="event-featured-cover bg-cover" style="background-image: url('{% static 'assets/img/banner/upcoming-event-2.jpg' %}')">
+                                <div class="event-time-address">
+                                    <span><i class="fal fa-calendar-alt"></i>Bihar</span>
+                                    <!-- <span><i class="fal fa-map-marker-alt"></i>NY, London</span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 pr-xl-0">
+                            <div class="event-info">
+                                <h2><a href="#">CS Foundation helping Wedding </a></h2>
+                                <p>  CS Foundation  can provide direct financial assistance to those in need, helping them to cover basic necessities and improve their quality of life.</p>
+                                <ul>
+                                    <li>A place in history</li>
+                                    <li>It’s about impact, goodness</li>
+                                    <li>More goodness in the world</li>
+                                    <li>The world we live</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 text-xl-right">
+                            <div class="event-ticket-buy">
+                                <a href="#" class="ticket-buy-btn"><i class="fal fa-home"></i>Learn More ..</a>
+                            </div>
+                        </div>
+                    </div> <!-- single-event-ticket -->
+                </div>
+                <div class="col-12 col-lg-6 col-xl-12 proevent festival grid-item">
+                    <div class="single-event-ticket row align-items-center">
+                        <div class="col-xl-4">
+                            <div class="event-featured-cover bg-cover" style="background-image: url('{% static 'assets/img/banner/cscomputerbatch1.jpg' %}')">
+                                <div class="event-time-address">
+                                    <!-- <span><i class="fal fa-calendar-alt"></i>24th July 2021</span> -->
+                                    <span><i class="fal fa-map-marker-alt"></i>Bihar</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 pr-xl-0">
+                            <div class="event-info">
+                                <h2><a href="#"> CS Foundation  Helping Education  </a></h2>
+                                <p>  CS Foundation  Helping Education can offer computer classes and other technological resources to help underserved communities gain valuable education and job skills</p>
+                                <ul>
+                                    <li>A place in history</li>
+                                    <li>It’s about impact, goodness</li>
+                                    <li>More goodness in the world</li>
+                                    <li>The world we live</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 text-xl-right">
+                            <div class="event-ticket-buy">
+                                <a href="#" class="ticket-buy-btn"><i class="fal fa-home"></i> Learn More ..</a>
+                            </div>
+                        </div>
+                    </div> <!-- single-event-ticket -->
+                </div>
+                <div class="col-12 col-lg-6 col-xl-12 trending grid-item">
+                    <div class="single-event-ticket row align-items-center">
+                        <div class="col-xl-4">
+                            <div class="event-featured-cover bg-cover" style="background-image: url('{% static 'assets/img/banner/upcoming-event-1.jpg' %}')">
+                                <div class="event-time-address">
+                                    <!-- <span><i class="fal fa-calendar-alt"></i>14th June 2021</span> -->
+                                    <span><i class="fal fa-map-marker-alt"></i>Bihar</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 pr-xl-0">
+                            <div class="event-info">
+                                <h2><a href="#">CS Foundation  helping foe wedding poor Girls</a></h2>
+                                <p> CS Foundation can provide financial and material support to help poor girls have a dignified wedding ceremony.</p>
+                                <ul>
+                                    <li>A place in history</li>
+                                    <li>It’s about impact, goodness</li>
+                                    <li>More goodness in the world</li>
+                                    <li>The world we live</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 text-xl-right">
+                            <div class="event-ticket-buy">
+                                <a href="#" class="ticket-buy-btn"><i class="fal fa-home"></i>Learn More..</a>
+                            </div>
+                        </div>
+                    </div> <!-- single-event-ticket -->
+                </div>
+                <div class="col-12 col-lg-6 col-xl-12 water festival grid-item">
+                    <div class="single-event-ticket row align-items-center">
+                        <div class="col-xl-4">
+                            <div class="event-featured-cover bg-cover" style="background-image: url('{% static 'assets/img/banner/cscomputerbatch3.jpg' %}')">
+                                <div class="event-time-address">
+                                    <!-- <span><i class="fal fa-calendar-alt"></i>28th Nov 2021</span> -->
+                                    <span><i class="fal fa-map-marker-alt"></i>Bihar</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 pr-xl-0">
+                            <div class="event-info">
+                                <h2><a href="#">CS Foundation  helping  who want to learn couputer </a></h2>
+                                <p> Learning computer skills can have a transformative impact on one's life, opening up new opportunities for education, employment, and personal growth</p>
+                                <ul>
+                                    <li>A place in history</li>
+                                    <li>It’s about impact, goodness</li>
+                                    <li>More goodness in the world</li>
+                                    <li>The world we live</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 text-xl-right">
+                            <div class="event-ticket-buy">
+                                <a href="#" class="ticket-buy-btn"><i class="fal fa-home"></i>Learn More..</a>
+                            </div>
+                        </div>
+                    </div> <!-- single-event-ticket -->
+                </div>
+                <div class="col-12 col-lg-6 col-xl-12 trending water grid-item">
+                    <div class="single-event-ticket row align-items-center">
+                        <div class="col-xl-4">
+                            <div class="event-featured-cover bg-cover" style="background-image: url('{% static 'assets/img/banner/upcoming-event-6.jpg' %}')">
+                                <div class="event-time-address">
+                                    <!-- <span><i class="fal fa-calendar-alt"></i>15th May 2021</span> -->
+                                    <span><i class="fal fa-map-marker-alt"></i>Bihar</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 pr-xl-0">
+                            <div class="event-info">
+                                <h2><a href="#">CS Foundation Suport for support </a></h2>
+                                <p> CS Foundation can provide financial and logistical support to athletes and sports teams to help them achieve their goals</p>
+                                <ul>
+                                    <li>A place in history</li>
+                                    <li>It’s about impact, goodness</li>
+                                    <li>More goodness in the world</li>
+                                    <li>The world we live</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 text-xl-right">
+                            <div class="event-ticket-buy">
+                                <a href="#" class="ticket-buy-btn"><i class="fal fa-home"></i>Learn More..</a>
+                            </div>
+                        </div>
+                    </div> <!-- single-event-ticket -->
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-12 text-center">
+                    <div class="causes-page-nav mt-50 causes-pages-link">
+                        <ul>
+                            <li><a href="#"><i class="fal fa-long-arrow-left"></i></a></li>
+                            <li><a href="#">01</a></li>
+                            <li><a href="#">02</a></li>
+                            <li><a href="#">03</a></li>
+                            <li><a href="#">04</a></li>
+                            <li><a href="#"><i class="fal fa-long-arrow-right"></i></a></li>
+                        </ul>
+                    </div><!-- /.blog-page-nav -->
+                </div> <!-- /.col-12 col-lg-12 -->  
+            </div>
+        </div>
+    </section>
+
+    {% endblock content %}

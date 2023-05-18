@@ -17,6 +17,32 @@ from django.core.exceptions import ValidationError
 # Create your views here.
 
 
+def add(a,b):
+    return (a+b)
+    
+def sub(a,b):
+    return (a-b) 
+    
+def mult(a,b):
+    return (a*b)
+
+def divide(a,b):
+    return (a/b)    
+    
+def Main():
+    a=add(1, 2)       #Output  3
+    s=sub(1, 2)       #Output -1
+    m=mult(1, 2)      #Output  2
+    d=divide(1, 2)    #Output  0.5
+    print(min(a,s,m,d)) 
+Main()    
+
+
+
+    
+    
+                
+
 @csrf_exempt
 def search(request):
     get_info=CustomUser.objects.all()
@@ -34,7 +60,7 @@ def search(request):
         else:
             obj_e =Evant.objects.all() 
             return render(request, "Admin_Templates\search_contact_user_data.html",{'obj_e':obj_e,'get_info':get_info,'query':query})
-
+@csrf_exempt
 def Download(request,download_id):
     response = HttpResponse(content_type = 'text/csv')
     #response['Content-Disposition'] = 'attachment; filename="Approve Po.csv"'
@@ -56,12 +82,12 @@ def Download(request,download_id):
                 ])
            
         return response
-
+@csrf_exempt
 def Admin_Page(request):
     get_info=CustomUser.objects.all()
     obj_e =Evant.objects.all() 
     return render(request , "Admin_Templates/index.html",{'obj_e':obj_e,'get_info':get_info})
-
+@csrf_exempt
 def User_Contact_for_Admin(request):
     conatct_data=User_Contact_Info.objects.all().order_by('id')
     conatct_data_count=User_Contact_Info.objects.all().count()
@@ -77,13 +103,13 @@ def User_Contact_for_Admin(request):
     view = paginator.get_page(page_number)
     obj_e =Evant.objects.all() 
     return render(request , "Admin_Templates/contactdata.html",{'obj_e':obj_e,'conatct_data':conatct_data,'get_info':get_info,'page_obj':view,'conatct_data_count':conatct_data_count})    
-
+@csrf_exempt
 def User_Contact_for_Admin_Delete(request , contact_id):
     obj=User_Contact_Info.objects.get(id=contact_id)
     obj.delete()
     messages.success(request, "User Contact deleted")
     return redirect(User_Contact_for_Admin)
-
+@csrf_exempt
 def Admin_Post(request):
     if request.method =='POST':
         category_name_id=request.POST.get('category_name')
@@ -99,7 +125,7 @@ def Admin_Post(request):
     get_img_category=Image_Category.objects.all()
     obj_e =Evant.objects.all()  
     return render(request , "Admin_Templates/galary_post.html",{'get_info':get_info,'get_img_category':get_img_category ,'obj_e':obj_e})    
-
+@csrf_exempt
 def Admin_Post_View(request):
     IMG=Admin_Post_Img.objects.all().order_by('id')
     get_info=CustomUser.objects.all()
@@ -114,19 +140,19 @@ def Admin_Post_View(request):
     view = paginator.get_page(page_number)
     obj_e =Evant.objects.all()  
     return render(request , "Admin_Templates/view_post.html",{'img_a':IMG,'get_info':get_info,'page_obj': view,'obj_e':obj_e})    
-
+@csrf_exempt
 def Admin_Post_Delete(request , post_id):
     Img_delete=Admin_Post_Img.objects.get(id = post_id)
     Img_delete.delete()
     messages.success(request , "Your Post Deleted")
     return redirect(Admin_Post_View)
-
+@csrf_exempt
 def Admin_Post_Edit(request,edit_id):
     Img_edit=Admin_Post_Img.objects.get(id=edit_id)
     get_info=CustomUser.objects.all()
     obj_e =Evant.objects.all()  
     return render(request, 'Admin_Templates/update_post.html',{'Img_edit':Img_edit,'get_info':get_info,'obj_e':obj_e})
-
+@csrf_exempt
 def Admin_Update(request):
     img_id=request.POST.get('id_img')
     update_img=Admin_Post_Img.objects.get(id=img_id)
@@ -144,7 +170,7 @@ def Admin_Update(request):
     get_info=CustomUser.objects.all()
     obj_e =Evant.objects.all()  
     return render(request, 'Admin_Templates/update_post.html',{'get_info':get_info,'obj_e':obj_e})
-
+@csrf_exempt
 def Admin_Create_Category(request):
     if request.method=='POST' :
         current_user = request.user
@@ -158,24 +184,24 @@ def Admin_Create_Category(request):
     get_info=CustomUser.objects.all()  
     obj_e =Evant.objects.all()  
     return render(request, 'Admin_Templates/admin_create_category.html',{'get_info':get_info,'obj_e':obj_e})
-
+@csrf_exempt
 def Admin_Category_View(request):
     views_category=Image_Category.objects.all()
     get_info=CustomUser.objects.all()   
     obj_e =Evant.objects.all()
     return render(request, "Admin_Templates/admin_view_category.html",{"views_category":views_category,'get_info':get_info,'obj_e':obj_e})
-
+@csrf_exempt
 def Admin_Category_Delete(request, cate_id):
     cate_id=Image_Category.objects.get(id=cate_id)
     cate_id.delete()
     messages.success(request , "Your Category Deleted")
     return redirect(Admin_Category_View)
-
+@csrf_exempt
 def  Admin_Category_Edit(request,category_id):
     obj_update=Image_Category.objects.get(id=category_id)
     obj_e=Evant.objects.all() 
     return render(request, 'Admin_Templates/admin_category_edit.html',{'obj_update':obj_update,'obj_e':obj_e})
-
+@csrf_exempt
 def Admin_Category_Update(request):
     cate_id = request.POST.get('id_category')
     # print(cate_id,"kkkkkkkkkkkkkkkkkkkkk")
@@ -190,13 +216,13 @@ def Admin_Category_Update(request):
         return redirect(Admin_Category_View)
     obj_e=Evant.objects.all() 
     return render(request, 'Admin_Templates/admin_update.html' ,{'obj_e':obj_e})
-
+@csrf_exempt
 def User_Admin_Update_Profile(request , Profile_id):
     get_id=CustomUser.objects.get(id=Profile_id)
     get_info=CustomUser.objects.all()
     obj_e=Evant.objects.all()   
     return render(request, 'Admin_Templates/admin_update.html',{'get_info':get_info,'get_id':get_id,"obj_e":obj_e})
-
+@csrf_exempt
 def User_Admin_Finaly_Update_Profile(request):
     if request.method == 'POST':
         current_admin_id=request.POST.get('admin_id')
@@ -220,10 +246,11 @@ def User_Admin_Finaly_Update_Profile(request):
         messages.success(request,  "Your Profile Successfully Updated !!")
     obj_e=Evant.objects.all()    
     return render(request, 'Admin_Templates/admin_update.html',{'obj_e':obj_e})
-
+@csrf_exempt
 def User_About(request):
     return render(request, 'User_Templates/about.html')
 
+@csrf_exempt
 def User_Causes(request ,data=None):
     galary_imgs=Admin_Post_Img.objects.all().order_by('id')
     pro_cate = Image_Category.objects.all()
@@ -241,7 +268,7 @@ def User_Causes(request ,data=None):
     view = paginator.get_page(page_number)
     return render(request, 'User_Templates/causes.html',{'galary_imgs':galary_imgs,'page_obj':view,'pro_cate':pro_cate ,'pro_img':pro_img})   
 
-
+@csrf_exempt
 # def Galary(request ,data=None):
 #     galary_pics=Admin_Post_Img.objects.all()
 #     galary_img=Image_Category.objects.all()
@@ -251,7 +278,7 @@ def User_Causes(request ,data=None):
 #     galary_pic=Admin_Post_Img.objects.filter(select_category_id=category_sec)
 #     return render(request, 'User_Templates/allcauses.html',{'galary_pic':galary_pic,'galary_pics':galary_pics,'galary_img':galary_img})   
 
-
+@csrf_exempt
 def User_Contact(request):
     if request.method == 'POST':
         full_name= request.POST.get('Full_Name')
@@ -271,18 +298,18 @@ def User_Contact(request):
         obj.save()
         messages.success(request, "Your Query Successfully Submited")
     return render(request, 'User_Templates/contact.html')
-
+@csrf_exempt
 def User_Donation(request):
     return render(request, 'User_Templates/donation.html')
-
+@csrf_exempt
 def User_Education(request):
     return render(request, 'User_Templates/Education.html')
-
+@csrf_exempt
 def User_Eventdetails(request):
     obj=Evant.objects.all()
     obj_e=Evant.objects.all()
     return render(request, 'User_Templates/event-details.html',{'obj':obj,'obj_e':obj_e})
-
+@csrf_exempt
 def User_Evant_post(request):
     if request.method == 'POST':
         img = request.FILES.get('img_evant')
@@ -293,13 +320,13 @@ def User_Evant_post(request):
     obj_e=Evant.objects.all()
     get_info=CustomUser.objects.all()
     return render(request, 'Admin_Templates/evant_post.html',{'obj_e':obj_e,'get_info':get_info})
-    
+@csrf_exempt    
 def User_Evant_post_Edit(request ,id):
     obj=Evant.objects.get(id=id)
     obj_e=Evant.objects.all()
     get_info=CustomUser.objects.all()
     return render(request, 'Admin_Templates/evant_post.html',{'obj':obj ,'obj_e':obj_e,'get_info':get_info})
-
+@csrf_exempt
 def user_Evant_Update(request):
     if request.method == 'POST':
         galary_img_id = request.POST.get('galary_img_id')
@@ -312,33 +339,30 @@ def user_Evant_Update(request):
         return redirect(f'/Admin-Evant-edit/{galary_img_id}')
     get_info=CustomUser.objects.all()
     return render(request, 'Admin_Templates/evant_post.html',{'get_info':get_info})
-    
-
+@csrf_exempt
 def User_Events(request):
     return render(request, 'User_Templates/events.html')
-
+@csrf_exempt
 def User_Faq(request):
     return render(request, 'User_Templates/faq.html')
-
+@csrf_exempt
 def User_Health(request):
     return render(request, 'User_Templates/health.html')
-
+@csrf_exempt
 def User_Index(request):
     return render(request, 'User_Templates/index.html')
-
+@csrf_exempt
 def User_Marriage(request):
     return render(request, 'User_Templates/marriage.html')
-
+@csrf_exempt
 def User_Newsdetails(request):
     return render(request, 'User_Templates/news-details.html')
-
+@csrf_exempt
 def User_Outproduct(request):
     return render(request, 'User_Templates/ourproduct.html')
-
+@csrf_exempt
 def User_Team(request):
     return render(request, 'User_Templates/team.html')
-
-
 
 
 
@@ -353,7 +377,7 @@ class Email_With_Login_User(ModelBackend):
             if user.check_password(password):
                 return user
         return None
-
+@csrf_exempt
 def User_login(request):
     if request.method == 'POST':
         user = Email_With_Login_User.authenticate(request, username=request.POST.get('email') , password=request.POST.get('password'),)
@@ -379,6 +403,7 @@ def User_login(request):
     #     return redirect('admin_login')      
     # return render(request , 'Admin_Templates/admin_login.html')    
     
+@csrf_exempt
 def logout_user(request):
     logout(request)
     return redirect('/')    

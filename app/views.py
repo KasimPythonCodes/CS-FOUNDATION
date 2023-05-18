@@ -621,7 +621,6 @@ def User_Health(request):
 @csrf_exempt
 
 def User_Index(request):
-
     return render(request, 'User_Templates/index.html')
 
 @csrf_exempt

@@ -134,9 +134,7 @@
         </nav>
         <!-- partial -->
      
-
-
-        <div class="col-md-8 grid-margin stretch-card">
+        <div class="col-md-10 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Galary Views</h4>
@@ -152,27 +150,36 @@
                {% endfor %}
               {% endif %}
                 <br>
-                <div class="row">
-                   {% if img_a %}
-                     
-                    {% for x in page_obj.object_list %}
-                    <div class="col-sm-6">
-                        <div class="card m-2 p-3">
-                      <img src="{{x.Img_Avatar.url}}" alt="mypic" class="card-img-top"  width="500px" height="180px">
-                      <div class="card-footer">
-                       <small class="text-muted">{{x.created_at}}
-                        <br>
-                        <br>
-                        <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="{% url 'Admin_Post_edit' x.id%}" ><button class="btn btn-info">Update</button></a></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <span><a href="{% url 'Admin_Post_Delete' x.id %}" ><button class="btn btn-danger">Delete</button></a></span>
-                       </small>
-                     </div> 
-                        </div>
-                    </div>   
-                    {% endfor %}
-                   {% endif %}
 
+
+                <div class="col-md-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Galary</h4>
+                      
+                      {% if img_a %}
+                     
+                      {% for x in page_obj.object_list %}
+                      <div class="col-sm-8">
+                          <div class="card m-2 p-3">
+                        <img src="{{x.Img_Avatar.url}}" alt="mypic" class="card-img-top"  width="300" height="300">
+                        <div class="card-footer">
+                         <small class="text-muted">{{x.created_at}}
+                          <br>
+                          <br>
+                          <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="{% url 'Admin_Post_edit' x.id%}" ><button class="btn btn-info">Update</button></a></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   <span><a href="{% url 'Admin_Post_Delete' x.id %}" ><button class="btn btn-danger">Delete</button></a></span>
+                         </small>
+                       </div> 
+                          </div>
+                      </div>   
+                      {% endfor %}
+                     {% endif %}
+
+
+                    </div>
+                  </div>
                 </div>
-                  
+                
                 <nav aria-label="Page navigation example ">
                   <ul class="pagination p-4">
                     {%if page_obj.has_previous %} {# whether the previous page exists #}

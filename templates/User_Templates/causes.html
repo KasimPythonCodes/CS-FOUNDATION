@@ -40,7 +40,7 @@
                             
                             <a href="/cs-causes/"> <button data-filter="*"  class="active">View All</button></a>
                             {% for pro_cate in pro_cate %}
-                            <a href="/cs-galary/{{pro_cate.create_category}}" ><button  data-filter="education" name="category" value="{{pro_cate.create_category}}">{{pro_cate}}</button></a>
+                            <a href="{% url 'User_Causes' %}" ><button  data-filter="education" name="category" value="{{pro_cate.create_category}}">{{pro_cate}}</button></a>
                             {% endfor %}
                         </form>
                     
@@ -70,6 +70,8 @@
                 </div>
 
                 {% endfor %}
+                
+                  
                 {% else %}
                 {% for i in page_obj %}
                 <div class="col-sm-4 col-lx-4 p-3">
@@ -82,6 +84,7 @@
                       </div>
                 </div>
                 {% endfor %}
+                
 
               {% endif %}
                 

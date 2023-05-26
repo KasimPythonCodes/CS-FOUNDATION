@@ -3,7 +3,9 @@ from app.views import*
 from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
-    ###############GALARY UPDATE#######################    
+    
+    ###############GALARY UPDATE#######################   
+     
     path('s-admin/',Admin_Page,name='admin_panel_index'),
     path('contact/',User_Contact_for_Admin,name='user-data-contact'),
     path('admin-post/',Admin_Post,name='admin_post'),                     
@@ -43,7 +45,7 @@ urlpatterns = [
     ###############USER ####################### 
     path('',User_Index,name='User_Index'),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
     path('About/',User_About,name='User_About'),
-    path('cs-galary/',User_Causes,name='User_Causes'),  
+    path('cs-galarys/',User_Causes,name='User_Causes'),  
     path('cs-galary/<slug:data>/',User_Causes,name='User_Causesgetmethed'),                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
     

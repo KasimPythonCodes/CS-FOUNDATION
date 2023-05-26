@@ -29,8 +29,8 @@ from django.core.exceptions import ValidationError
 # Create your views here.
 
 
-@csrf_exempt
 
+@csrf_exempt
 def search(request):
 
     get_info=CustomUser.objects.all()
@@ -62,7 +62,7 @@ def search(request):
 
             return render(request, "Admin_Templates\search_contact_user_data.html",{'obj_e':obj_e,'get_info':get_info,'query':query})
 
-@csrf_exempt
+
 
 def Download(request,download_id):
 
@@ -103,7 +103,7 @@ def Download(request,download_id):
            
         return response
 
-@csrf_exempt
+
 
 def Admin_Page(request):
 
@@ -113,7 +113,7 @@ def Admin_Page(request):
 
     return render(request , "Admin_Templates/index.html",{'obj_e':obj_e,'get_info':get_info})
 
-@csrf_exempt
+
 
 def User_Contact_for_Admin(request):
 
@@ -143,7 +143,7 @@ def User_Contact_for_Admin(request):
 
     return render(request , "Admin_Templates/contactdata.html",{'obj_e':obj_e,'conatct_data':conatct_data,'get_info':get_info,'page_obj':view,'conatct_data_count':conatct_data_count})    
 
-@csrf_exempt
+
 
 def User_Contact_for_Admin_Delete(request , contact_id):
 
@@ -154,7 +154,7 @@ def User_Contact_for_Admin_Delete(request , contact_id):
 
     return redirect(User_Contact_for_Admin)
 
-@csrf_exempt
+
 
 def Admin_Post(request):
 
@@ -186,7 +186,7 @@ def Admin_Post(request):
 
     return render(request , "Admin_Templates/galary_post.html",{'get_info':get_info,'get_img_category':get_img_category ,'obj_e':obj_e})    
 
-@csrf_exempt
+
 
 def Admin_Post_View(request):
 
@@ -214,7 +214,7 @@ def Admin_Post_View(request):
 
     return render(request , "Admin_Templates/view_post.html",{'img_a':IMG,'get_info':get_info,'page_obj': view,'obj_e':obj_e})    
 
-@csrf_exempt
+
 
 def Admin_Post_Delete(request , post_id):
 
@@ -226,7 +226,7 @@ def Admin_Post_Delete(request , post_id):
 
     return redirect(Admin_Post_View)
 
-@csrf_exempt
+
 
 def Admin_Post_Edit(request,edit_id):
 
@@ -238,7 +238,7 @@ def Admin_Post_Edit(request,edit_id):
 
     return render(request, 'Admin_Templates/update_post.html',{'Img_edit':Img_edit,'get_info':get_info,'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def Admin_Update(request):
 
@@ -274,7 +274,7 @@ def Admin_Update(request):
 
     return render(request, 'Admin_Templates/update_post.html',{'get_info':get_info,'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def Admin_Create_Category(request):
 
@@ -302,7 +302,7 @@ def Admin_Create_Category(request):
 
     return render(request, 'Admin_Templates/admin_create_category.html',{'get_info':get_info,'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def Admin_Category_View(request):
 
@@ -314,7 +314,7 @@ def Admin_Category_View(request):
 
     return render(request, "Admin_Templates/admin_view_category.html",{"views_category":views_category,'get_info':get_info,'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def Admin_Category_Delete(request, cate_id):
 
@@ -325,7 +325,7 @@ def Admin_Category_Delete(request, cate_id):
 
     return redirect(Admin_Category_View)
 
-@csrf_exempt
+
 
 def  Admin_Category_Edit(request,category_id):
 
@@ -335,7 +335,7 @@ def  Admin_Category_Edit(request,category_id):
 
     return render(request, 'Admin_Templates/admin_category_edit.html',{'obj_update':obj_update,'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def Admin_Category_Update(request):
 
@@ -364,7 +364,7 @@ def Admin_Category_Update(request):
 
     return render(request, 'Admin_Templates/admin_update.html' ,{'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def User_Admin_Update_Profile(request , Profile_id):
 
@@ -376,7 +376,7 @@ def User_Admin_Update_Profile(request , Profile_id):
 
     return render(request, 'Admin_Templates/admin_update.html',{'get_info':get_info,'get_id':get_id,"obj_e":obj_e})
 
-@csrf_exempt
+
 
 def User_Admin_Finaly_Update_Profile(request):
 
@@ -421,14 +421,14 @@ def User_Admin_Finaly_Update_Profile(request):
 
     return render(request, 'Admin_Templates/admin_update.html',{'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def User_About(request):
 
     return render(request, 'User_Templates/about.html')
 
 
-@csrf_exempt
+
 
 def User_Causes(request ,data=None):
 
@@ -461,7 +461,7 @@ def User_Causes(request ,data=None):
     return render(request, 'User_Templates/causes.html',{'galary_imgs':galary_imgs,'page_obj':view,'pro_cate':pro_cate ,'pro_img':pro_img})   
 
 
-@csrf_exempt
+
 
 # def Galary(request ,data=None):
 
@@ -480,7 +480,7 @@ def User_Causes(request ,data=None):
 #     return render(request, 'User_Templates/allcauses.html',{'galary_pic':galary_pic,'galary_pics':galary_pics,'galary_img':galary_img})   
 
 
-@csrf_exempt
+
 
 def User_Contact(request):
 
@@ -518,19 +518,19 @@ def User_Contact(request):
 
     return render(request, 'User_Templates/contact.html')
 
-@csrf_exempt
+
 
 def User_Donation(request):
 
     return render(request, 'User_Templates/donation.html')
 
-@csrf_exempt
+
 
 def User_Education(request):
 
     return render(request, 'User_Templates/Education.html')
 
-@csrf_exempt
+
 
 def User_Eventdetails(request):
 
@@ -540,7 +540,7 @@ def User_Eventdetails(request):
 
     return render(request, 'User_Templates/event-details.html',{'obj':obj,'obj_e':obj_e})
 
-@csrf_exempt
+
 
 def User_Evant_post(request):
 
@@ -562,7 +562,7 @@ def User_Evant_post(request):
 
     return render(request, 'Admin_Templates/evant_post.html',{'obj_e':obj_e,'get_info':get_info})
 
-@csrf_exempt    
+    
 
 def User_Evant_post_Edit(request ,id):
 
@@ -574,7 +574,7 @@ def User_Evant_post_Edit(request ,id):
 
     return render(request, 'Admin_Templates/evant_post.html',{'obj':obj ,'obj_e':obj_e,'get_info':get_info})
 
-@csrf_exempt
+
 
 def user_Evant_Update(request):
 
@@ -600,48 +600,48 @@ def user_Evant_Update(request):
 
     return render(request, 'Admin_Templates/evant_post.html',{'get_info':get_info})
 
-@csrf_exempt
+
 
 def User_Events(request):
 
     return render(request, 'User_Templates/events.html')
 
-@csrf_exempt
+
 
 def User_Faq(request):
 
     return render(request, 'User_Templates/faq.html')
 
-@csrf_exempt
+
 
 def User_Health(request):
 
     return render(request, 'User_Templates/health.html')
 
-@csrf_exempt
+
 
 def User_Index(request):
     return render(request, 'User_Templates/index.html')
 
-@csrf_exempt
+
 
 def User_Marriage(request):
 
     return render(request, 'User_Templates/marriage.html')
 
-@csrf_exempt
+
 
 def User_Newsdetails(request):
 
     return render(request, 'User_Templates/news-details.html')
 
-@csrf_exempt
+
 
 def User_Outproduct(request):
 
     return render(request, 'User_Templates/ourproduct.html')
 
-@csrf_exempt
+
 
 def User_Team(request):
 
@@ -669,7 +669,7 @@ class Email_With_Login_User(ModelBackend):
 
         return None
 
-@csrf_exempt
+
 
 def User_login(request):
 
@@ -717,7 +717,7 @@ def User_login(request):
     # return render(request , 'Admin_Templates/admin_login.html')    
     
 
-@csrf_exempt
+
 
 def logout_user(request):
 
